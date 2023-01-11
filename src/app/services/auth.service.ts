@@ -4,6 +4,7 @@ import { Observable, Subject } from 'rxjs';
 import { ILogin } from '../models/ILogin';
 import { IRegister } from '../models/IRegister';
 import { IAuthResult } from '../models/IAuthResult';
+import { JwtService } from './jwt.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +17,14 @@ export class AuthService {
 
   $connectedUser : Observable<IAuthResult | undefined> = this._$connectedUser.asObservable()
   
-  constructor(private _httpClient : HttpClient) { }
+  constructor(private _httpClient : HttpClient, private _jwt : JwtService) { }
 
   login(loginForm : ILogin) : void{
-    this._httpClient.post<IAuthResult>(this._url + '/Auth/Login', loginForm).subscribe({
+    this._httpClient.post<IAuthResult>(this._url + 'Auth/Login', loginForm).subscribe({
       next : (res) => {
         this._$connectedUser.next(res)
         localStorage.setItem('token', res.token)
-        //TODO Decripter le token pour stocké le user dans le local storage
+        localStorage.setItem('userId', this._jwt.decodeToken(res.token))
       },
       error : (err) => {
         this._$connectedUser.next(undefined)
@@ -33,11 +34,11 @@ export class AuthService {
   }
 
   register(register : IRegister) : void {
-    this._httpClient.post<IAuthResult>(this._url + '/Auth/Register', register).subscribe({
+    this._httpClient.post<IAuthResult>(this._url + 'Auth/Register', register).subscribe({
       next : (res) => {
         this._$connectedUser.next(res)
         localStorage.setItem('token', res.token)
-        //TODO: Decripter token + stocker
+        localStorage.setItem('userId', this._jwt.decodeToken(res.token))
       }, 
       error : (err) => {
         this._$connectedUser.next(undefined)
@@ -49,6 +50,6 @@ export class AuthService {
   logout() : void {
     this._$connectedUser.next(undefined)
     localStorage.removeItem('token')
-    // localStorage.removeItem('userId') -> pour quand j'aurai réglé l'histoire du token
+    localStorage.removeItem('userId')
   }
 }

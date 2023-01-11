@@ -1,1 +1,12 @@
-<p>login works!</p>
+<h2>Connectez vous :</h2>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div>
+        <label for="identifier">Identifiant : </label>
+        <input id="identifier" type="text" placeholder="email/pseudo" formControlName="identifier">
+    </div>
+    <div>
+        <label for="password">Mot de passe : </label>
+        <input id="password" type="password" formControlName="password">
+    </div>
+    <input type="submit">
+</form>
