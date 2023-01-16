@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit{
   loginForm : FormGroup
-
+  notValid : boolean = false
   constructor(private _fb : FormBuilder, private _authService : AuthService, private _route : Router) {
     this.loginForm = this._fb.group({
       identifier : [null, [Validators.required]],
@@ -30,10 +30,11 @@ export class LoginComponent implements OnInit{
   }
 
   login() : void{
+    this.notValid = false
     if(this.loginForm.valid)
     {
       this._authService.login(this.loginForm.value)
     }
-    else this.loginForm.markAllAsTouched()
+    else this.notValid = true
   }
 }

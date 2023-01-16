@@ -1,5 +1,5 @@
-<div class="user">
-    <p>(pseudo)</p>
-    <button><a>Se déconnetcer</a></button>
+<div class="user" *ngIf="connectedUser">
+    <p>{{connectedUser.pseudo}}</p>
     <button><a>Créer un évènement</a></button>
+    <button (click)="logOut()"><a>Se déconnetcer</a></button>
 </div>
