@@ -9,8 +9,8 @@ import { ILink } from 'src/app/models/ILinks';
 export class NavbarComponent {
   links : ILink[] = [
     { title : 'Accueil', url : '/' },
-    { title : 'Les évènements', url : '/events' },
-
+    { title : 'Tous les évènements', url : '/all-events' },
+    { title : 'Mes évènements', url : '/my-events'}
   ]
 
 }

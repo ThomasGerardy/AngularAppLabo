@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit{
       next : (res) => {
         if(res){
           this._route.navigateByUrl('/')
-          console.log(res)
         }
       }
     })

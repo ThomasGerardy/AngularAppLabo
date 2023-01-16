@@ -8,19 +8,16 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
- connectedUser : IAuthResult | undefined
+
+  connectedUser : IAuthResult |undefined
 
   constructor(private _authService : AuthService) {}
   
   ngOnInit(): void {
-    this._authService.$connectedUser.subscribe({
-      next : (user : IAuthResult | undefined) => {
-        this.connectedUser = user
-      },
-      error : (err) => {
-        console.log(err)
-      }
-      
-    })
+
+  }
+
+  logout() : void {
+    this._authService.logout()
   }
 }

@@ -1,8 +1,11 @@
 <div>
     <h1>App angular trop belle svp</h1>
-    <div *ngIf="!connectedUser">
+    <div *ngIf="true">
         <a routerLink="/login"><button>Se connecter</button></a>
         <a routerLink="/register"><button>S'inscrire</button></a>
+    </div>
+    <div>
+        <a routerLink="/"><button (click)="logout()">Se déconnecter</button></a>
     </div>
 
 

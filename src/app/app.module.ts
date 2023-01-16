@@ -9,6 +9,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AllEventsComponent } from './all-events/all-events.component';
+import { MyEventsComponent } from './my-events/my-events.component';
+import { ConnectedUserComponent } from './connected-user/connected-user.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AllEventsComponent,
+    MyEventsComponent,
+    ConnectedUserComponent
   ],
   imports: [
     BrowserModule,
