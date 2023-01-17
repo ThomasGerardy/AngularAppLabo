@@ -74,6 +74,6 @@ export class AuthService {
           this._$connectedUser.next(undefined)
         }
       })
-    } else  this._$connectedUser.next(undefined)
+    } else  this._$connectedUser.next(undefined) 
   }
 }

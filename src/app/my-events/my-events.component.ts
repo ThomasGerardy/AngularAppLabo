@@ -13,15 +13,14 @@ export class MyEventsComponent implements OnInit{
 
   constructor(private _as : AuthService, private _route : Router) {}
 
-  ngOnInit(): void {
+  // TODO : gérer le petit bug -> quand on est sur my-events et qu'on se déco, on ne peut pas retourner sur l'accueil
+  ngOnInit(): void { 
     this._as.$connectedUser.subscribe({
-      next : (user : IUser | undefined) => { this.connectedUser = user 
-      console.log(user)
-      if(user == undefined){
+      next : (user : IUser | undefined) => {
+        this.connectedUser = user
+        if(!this.connectedUser)
           this._route.navigateByUrl('/login')
-        }
       }
     })
-    this._as.getConnectedUser()
   }
-}
+  }

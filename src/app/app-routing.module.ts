@@ -5,13 +5,14 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MyEventsComponent } from './my-events/my-events.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginActivateGuard } from './guard/login-activate.guard';
 
 const routes: Routes = [
   { path : '', component : HomeComponent },
   { path : 'login', component : LoginComponent },
   { path : 'register', component : RegisterComponent },
   { path : 'all-events', component : AllEventsComponent},
-  { path : 'my-events', component : MyEventsComponent}
+  { path : 'my-events', component : MyEventsComponent, canActivate:[LoginActivateGuard]},
 ];
 
 @NgModule({
