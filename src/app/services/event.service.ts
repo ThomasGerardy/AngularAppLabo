@@ -26,7 +26,7 @@ export class EventService {
   getAll() : void {
     this._httpClient.get<IEvent[]>(this._url + 'NextActivities').subscribe({
       next : () => { 
-     
+        
       }
 
     })
