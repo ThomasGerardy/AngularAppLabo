@@ -17,7 +17,7 @@ export class RegisterComponent {
       password : [null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W|_]).+$/)]]
     })
   }
-
+ // ça marche ap
   register() : void{
     if(this.registerForm.valid)
       this._as.register(this.registerForm.value)

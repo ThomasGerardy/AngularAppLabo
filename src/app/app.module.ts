@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AllEventsComponent } from './all-events/all-events.component';
 import { MyEventsComponent } from './my-events/my-events.component';
 import { ConnectedUserComponent } from './connected-user/connected-user.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ConnectedUserComponent } from './connected-user/connected-user.componen
     RegisterComponent,
     AllEventsComponent,
     MyEventsComponent,
-    ConnectedUserComponent
+    ConnectedUserComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,

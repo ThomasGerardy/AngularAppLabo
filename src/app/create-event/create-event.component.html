@@ -1,0 +1,26 @@
+<h2>Créer un évènement :</h2>
+<form [formGroup]="eventForm" (ngSubmit)="createEvent()">
+    <div>
+        <label for="name">Nom : </label>
+        <input id="name" type="text" formControlName="name">
+    </div>
+    <div>
+        <label for="desc">Description : </label>
+        <input id="desc" type="text" formControlName="description">
+    </div>
+    <div>
+        <label  for="date-start">Date de début : </label>
+        <input id="date-start" type="datetime-local" formControlName="startDate">
+    </div>
+    <div>
+        <label for="date-end">Date de fin : </label>
+        <input id="date-end" type="datetime-local" formControlName="endDate">
+    </div>
+    <div>
+        <label for="nb-guest">Nombre de participant maximum : </label>
+        <input id="nb-guest" type="number" formControlName="maxGuest">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>

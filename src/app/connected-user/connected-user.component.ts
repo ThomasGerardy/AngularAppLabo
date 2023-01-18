@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class ConnectedUserComponent implements OnInit {
 
-  constructor(private _as : AuthService, private _route : Router){}
+  constructor(private _as : AuthService, private _route : Router) {}
   connectedUser : IUser | undefined 
   
   logOut() : void {
