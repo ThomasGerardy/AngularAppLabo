@@ -1,5 +1,5 @@
 <h2>Inscrivez-vous :</h2>
-<form [formGroup]="registerForm"> 
+<form [formGroup]="registerForm" (ngSubmit)="register()"> 
     <div>
         <label for="pseudo-register">Pseudo : </label>
         <input id="pseudo-register" type="text" placeholder="xxXDrakAssassinXxx" formControlName="pseudo">
@@ -19,7 +19,7 @@
         <span *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']">Le mot de passe est requis</span>
         <span *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['pattern']">Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un cractère spécial</span>
     </div>
-    <div>
+    <div> 
         <input type="submit" value="S'inscrire">
     </div>
 </form>

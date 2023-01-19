@@ -1,0 +1,10 @@
+<form [formGroup]="formGuest" (ngSubmit)="join()" *ngIf="!displaySucces">
+    <label for="guest">Reserver pour </label>
+    <input id="guest" type="number" formControlName="nbGuest">
+    <span *ngIf="formGuest.get('nbGuest')?.errors?.['required']">Ce champ est requis</span>
+    <input type="submit" value="Valider">
+    <div *ngIf="displaySucces">
+        <p>Vous êtes bien inscrit !</p>
+        <button><a routerLink="/">Accueil</a></button>
+    </div>
+</form>

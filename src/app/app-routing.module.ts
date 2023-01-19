@@ -7,6 +7,8 @@ import { MyEventsComponent } from './my-events/my-events.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginActivateGuard } from './guard/login-activate.guard';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { JoinComponent } from './all-events/join/join.component';
+import { EventJoinedComponent } from './event-joined/event-joined.component';
 
 const routes: Routes = [
   { path : '', component : HomeComponent },
@@ -14,7 +16,9 @@ const routes: Routes = [
   { path : 'register', component : RegisterComponent },
   { path : 'all-events', component : AllEventsComponent},
   { path : 'my-events', component : MyEventsComponent, canActivate : [LoginActivateGuard]},
-  { path : 'create-event', component : CreateEventComponent }
+  { path : 'create-event', component : CreateEventComponent },
+  { path : 'join/:id', component : JoinComponent},
+  { path : 'event-joined', component : EventJoinedComponent}
 ];
 
 @NgModule({

@@ -14,17 +14,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th><button class="btn-table">📄</button></th>
-            <th><button class="btn-table">🗑️</button></th>
-            <th><button class="btn-table">❌</button></th>
+        <tr *ngFor="let item of myevents, let i = index">
+            <th>{{item.name}}</th>
+            <th>{{item.description}}</th>
+            <th>{{item.startDate}}</th>
+            <th>{{item.endDate}}</th>
+            <th>{{item.maxGuest}}</th>
+            <th>une image :)</th>
+            <th><button class="btn-table" (click)="update(item.id)">📄</button></th>
+            <th><button class="btn-table" (click)="delete(item.id)">🗑️</button></th>
+            <th><button class="btn-table" (click)="cancel(item.id)">❌</button></th>
         </tr>
     </tbody>
+    <h3 *ngIf="faute">Flemme, fallait pas faire de fautes man ! </h3>
 </table>
 

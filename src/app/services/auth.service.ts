@@ -50,10 +50,11 @@ export class AuthService {
             this._$connectedUser.next(response)
           }
         })
-        
       }, 
-      error : () => {
+      error : (err) => {
+        console.log(err);
         this._$connectedUser.next(undefined)
+        
       }
     })
   }
@@ -77,3 +78,4 @@ export class AuthService {
     } else  this._$connectedUser.next(undefined) 
   }
 }
+ 

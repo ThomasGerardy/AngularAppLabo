@@ -13,15 +13,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th><button class="btn-table">🆗</button></th>
+        <tr *ngFor="let item of events; let i = index">
+            <th>{{item.name}}</th>
+            <th>{{item.description}}</th>
+            <th>{{item.startDate}}</th>
+            <th>{{item.endDate}}</th>
+            <th>{{item.maxGuest}}</th>
+            <th>une image :)</th>
+            <th>{{item.creator.pseudo}}</th>
+            <th><button class="btn-table"><a routerLink="/join/{{item.id}}">🆗</a></button></th>
         </tr>
     </tbody>
 </table>

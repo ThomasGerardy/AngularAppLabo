@@ -10,7 +10,8 @@ export class NavbarComponent {
   links : ILink[] = [
     { title : 'Accueil', url : '/' },
     { title : 'Tous les évènements', url : '/all-events' },
-    { title : 'Mes évènements', url : '/my-events'}
+    { title : 'Mes évènements', url : '/my-events'},
+    { title : 'Je participe', url : '/event-joined'}
   ]
 
 }

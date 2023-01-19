@@ -1,3 +1,5 @@
+import { IUser } from './IUser'
+
 export interface IEvent{
     id : number
     name : string
@@ -6,5 +8,5 @@ export interface IEvent{
     endDate : string
     maxGuest : number
     isCancel : boolean
-    creator : string
+    creator : IUser
 }

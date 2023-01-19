@@ -13,6 +13,8 @@ import { AllEventsComponent } from './all-events/all-events.component';
 import { MyEventsComponent } from './my-events/my-events.component';
 import { ConnectedUserComponent } from './connected-user/connected-user.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { JoinComponent } from './all-events/join/join.component';
+import { EventJoinedComponent } from './event-joined/event-joined.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { CreateEventComponent } from './create-event/create-event.component';
     AllEventsComponent,
     MyEventsComponent,
     ConnectedUserComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    JoinComponent,
+    EventJoinedComponent
   ],
   imports: [
     BrowserModule,
