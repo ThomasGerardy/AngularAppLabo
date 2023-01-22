@@ -11,9 +11,9 @@ import { IUser } from '../models/IUser';
 export class EventService {
   private _url : string = 'https://localhost:7245/api/'
 
-  private _$events : Subject<IEvent[] | undefined> = new Subject<IEvent[] | undefined>()
+  private _$events : BehaviorSubject<IEvent[] | undefined> = new BehaviorSubject<IEvent[] | undefined>([])
 
-  private _$myEvents : Subject<IEvent[] | undefined> = new Subject<IEvent[] | undefined>()
+  private _$myEvents : BehaviorSubject<IEvent[] | undefined> = new BehaviorSubject<IEvent[] | undefined>([])
 
   $events : Observable<IEvent[] | undefined> = this._$events.asObservable()
   $myEvents : Observable<IEvent[] | undefined> = this._$myEvents.asObservable()
@@ -39,13 +39,8 @@ export class EventService {
     })
   }
   //Pour les activité auxquelles je participe
-  getAllMyEvents() : void {
-    this._httpClient.get<IEvent[]>(this._url + 'Activity/MyActivities', { headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('token') }}).subscribe({
-      next : (rep) => {
-        this._$myEvents.next(rep)
-      },
-      error : (err) => { console.log(err) }
-    })
+  getAllMyEvents() : Observable<IEvent[]> {
+   return this._httpClient.get<IEvent[]>(this._url + 'Activity/MyActivities', { headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('token') }})
   }
 
   grosDeleteSaMer(id : number) : void {
@@ -61,5 +56,19 @@ export class EventService {
       next : () => { console.log('T es cancel mec');
       }
     })
+  }
+  getById(id : number) : IEvent {
+    let event : IEvent 
+    let event2 : IEvent | undefined
+    this._httpClient.get<IEvent>(this._url + 'Activity/' + id).subscribe({
+      next : rep => event2 = rep,
+      error : err => console.log(err)
+      
+    })
+    if(event2){
+      event = event2
+    }
+    else event = { id : 0 , name : '', description : '', startDate : '', endDate : '', maxGuest : 0, isCancel : true, creator : undefined}
+    return event
   }
 }

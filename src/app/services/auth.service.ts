@@ -66,7 +66,7 @@ export class AuthService {
   }
   getConnectedUser() : void {
     let userId : number | null = parseInt(localStorage.getItem('userId') ?? '')
-    if(userId){
+    if(userId && userId !== parseInt('')){
       this._httpClient.get<IUser>(this._url + 'Member/' + userId).subscribe({
         next : (res) => {
           this._$connectedUser.next(res)

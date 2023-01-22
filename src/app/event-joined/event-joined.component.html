@@ -1,8 +1,14 @@
 <h1>Je suis inscrit :</h1>
-<div *ngFor="let item of eventJoined">
-    <div>{{item.name}}</div>
-    <div>{{item.description}}</div>
-    <div>{{item.startDate}}</div>
-    <div>{{item.maxGuest}}</div>
-    <div><button (click)="leave(item.id)">Se désincrire</button></div>
+<div class="container">
+    <div *ngFor="let item of eventJoined">
+        <div class="figure">
+            <div class="img">
+                <div>{{item.name}}</div>
+                <div>{{item.description}}</div>
+                <div>{{item.startDate}}</div>
+                <div>{{item.maxGuest}}</div>
+                <div><button (click)="leave(item.id)">Se désincrire</button></div>
+            </div>
+        </div>
+    </div>
 </div>

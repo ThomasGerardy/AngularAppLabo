@@ -1,7 +1,17 @@
-<div>
-    <h1>App angular trop belle svp</h1>
-    <div *ngIf="!connectedUser">
-        <a routerLink="/login"><button>Se connecter</button></a>
-        <a routerLink="/register"><button>S'inscrire</button></a>
+<h2>Tous les évènements</h2>
+<div *ngIf="!cbon" class="spinner"><div class="lds-dual-ring"></div></div>
+  <div class="menu" [ngClass]=" { 'hidden' : !cbon}">
+    <div class="menu--wrapper">
+      <div class="menu--item" *ngFor="let item of events">
+        <div class="figure"><div class="img">
+            <h3>{{item.name}}</h3>
+            <div>{{item.description}}</div>
+            <div>{{item.startDate}}</div>
+            <div>{{item.endDate}}</div>
+            <div>{{item.maxGuest}}</div>
+            <div>{{item.creator?.pseudo}}</div>
+            <div class="btn-table"><button><a routerLink="/join/{{item.id}}">Rejoindre</a></button></div>
+        </div></div>
+      </div>
     </div>
-</div>
+  </div>

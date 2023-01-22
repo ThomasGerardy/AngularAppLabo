@@ -1,5 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #e8eaee;
+}
 *{
-    background-color: rgb(11, 11, 30);
-    color : lightblue
+    
+    // background-color: #ffffff;
+    color : #121212;
+    font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+button{
+    background-color: #364efe;
+    border-radius: 12px;
+    width: 10vw;
+    color : #ffffff;
+}
+a{
+    background-color: #364efe;
+    color : #ffffff;
+    text-decoration: none;
+    border-radius: 2em;
+
+}
+input{ 
+    border-radius: 12px;
+    background-color: #f2f4f5;
+}
+
+.btn{
+    background-color: #364efe;
+    color: #ffffff;
 }

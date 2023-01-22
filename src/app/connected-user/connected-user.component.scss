@@ -1,8 +1,30 @@
-*{
+#spy{
+    position:absolute;
+    width : 100vw ;
+    height : 40vh;
+    display : flex;
+    justify-content : start; 
+    align-items : flex-start;
+    
+}
+a{
+    width: 10vw;
+}
+.detective{
+    font-size: x-large;
+}
+.comp{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 2em;
+    width: 12vw;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
 }
-button{
-    width: 80px;
-    height: 40px;
+p{
+    margin: 0;
 }

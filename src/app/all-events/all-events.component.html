@@ -1,27 +1,13 @@
 <h2>Tous les évènements :</h2>
-<table>
-    <thead>
-        <tr>
-            <th class="thead">Nom</th>
-            <th class="thead">Description</th>
-            <th class="thead">Date de début</th>
-            <th class="thead">Date de fin</th>
-            <th class="thead">Nombre d'invité max</th>
-            <th class="thead">Image</th>
-            <th class="thead">Créateur</th>
-            <th class="thead">Rejoindre</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of events; let i = index">
-            <th>{{item.name}}</th>
-            <th>{{item.description}}</th>
-            <th>{{item.startDate}}</th>
-            <th>{{item.endDate}}</th>
-            <th>{{item.maxGuest}}</th>
-            <th>une image :)</th>
-            <th>{{item.creator.pseudo}}</th>
-            <th><button class="btn-table"><a routerLink="/join/{{item.id}}">🆗</a></button></th>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+    <div class="menu--item" *ngFor="let item of events">
+        <div class="figure"><div class="img">
+            <h3>{{item.name}}</h3>
+            <div>{{item.description}}</div>
+            <div>{{item.startDate}}</div>
+            <div>{{item.endDate}}</div>
+            <div>{{item.maxGuest}}</div>
+            <div>{{item.creator?.pseudo}}</div>
+            <div class="btn-table"><button><a routerLink="/join/{{item.id}}">Rejoindre</a></button></div>
+        </div></div>
+</div>

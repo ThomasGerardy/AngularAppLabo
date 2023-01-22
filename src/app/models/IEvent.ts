@@ -8,5 +8,5 @@ export interface IEvent{
     endDate : string
     maxGuest : number
     isCancel : boolean
-    creator : IUser
+    creator? : IUser
 }

@@ -1,5 +1,14 @@
-<div class="user" *ngIf="connectedUser">
-    <p>{{connectedUser.pseudo}}</p>
-    <button><a routerLink="/create-event">Créer un évènement</a></button>
-    <button (click)="logOut()"><a>Se déconnetcer</a></button>
+<div id="spy">
+    <div class="user comp" *ngIf="connectedUser">
+        <p>{{connectedUser.pseudo}}</p>
+        <p class="detective">🕵️</p>
+        <button><a routerLink="/create-event">Créer un évènement</a></button>
+        <button (click)="logOut()"><a>Se déconnetcer</a></button>
+    </div>
+</div>
+<div class="comp">
+    <div *ngIf="!connectedUser">
+        <a routerLink="/login"><button>Se connecter</button></a>
+        <a routerLink="/register"><button>S'inscrire</button></a>
+    </div>
 </div>

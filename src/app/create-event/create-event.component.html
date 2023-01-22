@@ -1,5 +1,5 @@
 <h2>Créer un évènement :</h2>
-<form [formGroup]="eventForm" (ngSubmit)="createEvent()">
+<div class="form-contain"><form [formGroup]="eventForm" (ngSubmit)="createEvent()">
     <div>
         <label for="name">Nom : </label>
         <input id="name" type="text" formControlName="name">
@@ -20,7 +20,8 @@
         <label for="nb-guest">Nombre de participant maximum : </label>
         <input id="nb-guest" type="number" formControlName="maxGuest">
     </div>
-    <div>
-        <input type="submit">
+    <div class="test">
+        <input id="submit" type="submit">
     </div>
 </form>
+</div>

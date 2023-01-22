@@ -1,0 +1,27 @@
+.img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    transform-origin: center;
+  }
+  .figure {
+    padding: 0;
+    width: 22vw;
+    height: 27vh;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 2em;
+  }
+  .container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 120px;
+        margin-bottom: 20px;
+  }

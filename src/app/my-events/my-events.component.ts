@@ -37,7 +37,7 @@ export class MyEventsComponent implements OnInit{
   }
 
   getMyActivities() : void {
-    this.myevents = this.myevents?.filter(e => e.creator.id === parseInt(localStorage.getItem('userId') ?? ''))
+    this.myevents = this.myevents?.filter(e => e.creator?.id === parseInt(localStorage.getItem('userId') ?? ''))
   }
 
   delete(id : number) : void {

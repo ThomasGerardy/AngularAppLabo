@@ -1,6 +1,9 @@
 <nav class="menu">
-    <div *ngFor="let item of links">
-        <a [routerLink]="item.url">{{item.title}}</a>
-    
+    <div *ngFor="let item of links; let i = index" >
+        <a [routerLink]="item.url" [class]="item.selected" (click)="changeSelected(i)">{{item.title}}</a>
     </div>
+    
 </nav>
+<div class="title">
+    <h1>App angular trop belle svp</h1>
+</div>

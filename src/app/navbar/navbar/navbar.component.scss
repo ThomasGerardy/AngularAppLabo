@@ -1,0 +1,28 @@
+nav{
+
+    background-color: #ffffff;
+    border-radius: 2em;
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-around;
+    margin: 30;
+    height: 250%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+a{
+    background-color: #ffffff;
+    color : #a4abb4;
+    border-radius: 3px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.selected{
+    color: black;
+    background-color:  #e8eaee;
+}
+.title{
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+}

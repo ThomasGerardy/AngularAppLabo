@@ -16,6 +16,8 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { JoinComponent } from './all-events/join/join.component';
 import { EventJoinedComponent } from './event-joined/event-joined.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,8 @@ import { EventJoinedComponent } from './event-joined/event-joined.component';
     ConnectedUserComponent,
     CreateEventComponent,
     JoinComponent,
-    EventJoinedComponent
+    EventJoinedComponent,
+
   ],
   imports: [
     BrowserModule,

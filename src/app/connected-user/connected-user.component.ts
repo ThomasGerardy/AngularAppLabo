@@ -16,10 +16,11 @@ export class ConnectedUserComponent implements OnInit {
   connectedUser : IUser | undefined 
   
   logOut() : void {
-    this._as.logout()
+    this._as.logout() 
     
   }
   ngOnInit(): void {
+    this._as.getConnectedUser()
     this._as.$connectedUser.subscribe({
       next : (user : IUser | undefined) => {
         this.connectedUser = user

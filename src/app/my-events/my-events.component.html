@@ -1,31 +1,20 @@
 <h2>Mes évènements : </h2>
-<table>
-    <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Description</th>
-            <th>Date de debut</th>
-            <th>Date de fin</th>
-            <th>Nombre d'invité max</th>
-            <th>Image</th>
-            <th>Modifier</th>
-            <th>Supprimer</th>
-            <th>Annuler</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of myevents, let i = index">
-            <th>{{item.name}}</th>
-            <th>{{item.description}}</th>
-            <th>{{item.startDate}}</th>
-            <th>{{item.endDate}}</th>
-            <th>{{item.maxGuest}}</th>
-            <th>une image :)</th>
-            <th><button class="btn-table" (click)="update(item.id)">📄</button></th>
-            <th><button class="btn-table" (click)="delete(item.id)">🗑️</button></th>
-            <th><button class="btn-table" (click)="cancel(item.id)">❌</button></th>
-        </tr>
-    </tbody>
+    <div class="container">
+        <div *ngFor="let item of myevents, let i = index">
+            <div class="figure">
+                <div class="img">
+                    <div>{{item.name}}</div>
+                    <div>{{item.description}}</div>
+                    <div>{{item.startDate}}</div>
+                    <div>{{item.endDate}}</div>
+                    <div>{{item.maxGuest}}</div>
+                    <div>une image :)</div>
+                    <div><button class="btn-table" (click)="update(item.id)">📄</button></div>
+                    <div><button class="btn-table" (click)="delete(item.id)">🗑️</button></div>
+                    <div><button class="btn-table" (click)="cancel(item.id)">❌</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <h3 *ngIf="faute">Flemme, fallait pas faire de fautes man ! </h3>
-</table>
 

@@ -1,0 +1,39 @@
+form{
+    background-color: #ffffff;
+    width: 50vw;
+    height: 35vh;
+    border-radius: 2em;
+    margin-bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+.form-contain{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+#guest{
+    width: 20%;
+}
+input{
+    width: 50%;
+}
+.inp{
+    display: flex;
+    justify-content: center;
+}
+label{
+    margin: 5%;
+
+}
+#submit{
+    align-self: center;
+    background-color: #364efe;
+    color: #ffffff;
+}
+.test{
+    display: flex;
+    justify-content: center;
+}

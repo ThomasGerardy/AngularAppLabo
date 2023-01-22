@@ -8,10 +8,15 @@ import { ILink } from 'src/app/models/ILinks';
 })
 export class NavbarComponent {
   links : ILink[] = [
-    { title : 'Accueil', url : '/' },
-    { title : 'Tous les évènements', url : '/all-events' },
-    { title : 'Mes évènements', url : '/my-events'},
-    { title : 'Je participe', url : '/event-joined'}
+    { title : '	⌂ Accueil ', url : '/', selected : 'selected' },
+    { title : ' ♦ Evenements ', url : '/all-events' },
+    { title : ' ♣ Mes évènements ', url : '/my-events' },
+    { title : ' ♥ Je participe ', url : '/event-joined' }
   ]
 
+
+  changeSelected(i : number) : void{
+    this.links.forEach( l => l.selected = '')
+    this.links[i].selected = 'selected'
+  }
 }

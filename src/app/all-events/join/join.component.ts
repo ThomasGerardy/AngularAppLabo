@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IEvent } from 'src/app/models/IEvent';
 import { EventService } from 'src/app/services/event.service';
 import { RegistrationService } from 'src/app/services/registration.service';
 
@@ -12,7 +13,7 @@ import { RegistrationService } from 'src/app/services/registration.service';
 export class JoinComponent implements OnInit {
   formGuest : FormGroup
   displaySucces : boolean = false
-  constructor(private _fb : FormBuilder, private _rs : RegistrationService, private _route : ActivatedRoute, private _router : Router, private _es : EventService) {
+  constructor(private _fb : FormBuilder, private _rs : RegistrationService, private _route : ActivatedRoute, private _es : EventService, private _router : Router) {
     this.formGuest = this._fb.group({
       nbGuest : [null, [Validators.required]]
     })
@@ -22,25 +23,19 @@ export class JoinComponent implements OnInit {
       next : (res) => {
         if(this.formGuest.valid){
           this._rs.join(parseInt(res['id']), this.formGuest.value)
+          this._router.navigateByUrl('/event-joined')
         }
         this.formGuest.markAllAsTouched()
       }, 
       error : err => console.log(err)
-      
     })
-    
   }
-  //TODO : Revoir => le message doit s'afficher si on est déjà inscrit à l'event et direct après l'inscription ! 
+ 
   ngOnInit(): void {
-    this._es.getAllMyEvents()
+    // this._es.getAllMyEvents()
+    let id : number = parseInt(this._route.snapshot.params['id'])
     this._es.$myEvents.subscribe({
-      next : (res) => {
-        this._route.params.subscribe({
-          next : (param) => { 
-            this.displaySucces = res?.includes(param['id']) ?? false
-          }
-        })
-      }
+      next : res => this.displaySucces = res?.some( e => e.id === id) ?? false
     })
   }
 }

@@ -24,7 +24,6 @@ export class RegistrationService {
     this._httpclient.post(this._url + 'Leave/' + eventId, { }, { headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('token')}}).subscribe({
       next : () => { console.log('Un soladat parti trop tôt') },
       error : err => console.log(err)
-      
     })
   }
 }

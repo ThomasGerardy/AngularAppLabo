@@ -23,7 +23,7 @@ export class AllEventsComponent implements OnInit{
       },
       error : (err) => {
         console.log(err)
-      }
+      } 
     })
   }
 }
