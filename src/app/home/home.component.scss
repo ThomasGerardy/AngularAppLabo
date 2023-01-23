@@ -37,9 +37,8 @@
       left: 0;
       width: 30vw;
       height: 100%;
-      padding: 0 1.5vw;
+      padding: 0 1vw;
       overflow: hidden;
-      
       @media (max-width: 767px) {
         width: 40vw;
         height: 40vw;
@@ -48,22 +47,20 @@
       &:nth-child(n+10):before {
         content: counter(count);
       }
-      
       .figure {
         position: absolute;
         z-index: 1;
         display: block;
         user-select: none;
-        // -webkit-appearance: none;
+        -webkit-appearance: none;
         padding: 0;
         border: none;
         outline: none;
         box-shadow: none;
-        cursor: pointer;
+        // cursor: grab;
         width: 25vw;
         height: 25vh;
         overflow: hidden;
-        // pointer-events: none;
         transform-origin: center;
         background-color: #ffffff;
         border-radius: 2em;
@@ -81,6 +78,8 @@
           object-fit: cover;
           vertical-align: middle;
           transform-origin: center;
+          padding: 20px;
+          cursor: grab;
         }
       
         &:before {

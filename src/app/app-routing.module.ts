@@ -16,9 +16,9 @@ const routes: Routes = [
   { path : 'register', component : RegisterComponent },
   { path : 'all-events', component : AllEventsComponent},
   { path : 'my-events', component : MyEventsComponent, canActivate : [LoginActivateGuard]},
-  { path : 'create-event', component : CreateEventComponent },
-  { path : 'join/:id', component : JoinComponent},
-  { path : 'event-joined', component : EventJoinedComponent}
+  { path : 'create-event', component : CreateEventComponent, canActivate : [LoginActivateGuard] },
+  { path : 'join/:id', component : JoinComponent, canActivate : [LoginActivateGuard]},
+  { path : 'event-joined', component : EventJoinedComponent, canActivate : [LoginActivateGuard]}
 ];
 
 @NgModule({

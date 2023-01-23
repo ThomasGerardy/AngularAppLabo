@@ -5,9 +5,9 @@
             <div class="img">
                 <div>{{item.name}}</div>
                 <div>{{item.description}}</div>
-                <div>{{item.startDate}}</div>
+                <div>{{item.startDate | date : 'dd/MM/yy hh:mm'}}</div>
                 <div>{{item.maxGuest}}</div>
-                <div><button (click)="leave(item.id)">Se désincrire</button></div>
+                <div><button (click)="leave(item.id)" class="btn">Se désincrire</button></div>
             </div>
         </div>
     </div>

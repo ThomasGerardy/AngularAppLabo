@@ -1,27 +1,29 @@
-<h2>Créer un évènement :</h2>
-<div class="form-contain"><form [formGroup]="eventForm" (ngSubmit)="createEvent()">
-    <div>
-        <label for="name">Nom : </label>
+<div class="container-form">
+
+    <h2>Créer un évènement :</h2>
+    <form [formGroup]="eventForm" (ngSubmit)="createEvent()">
+        <div class="container-input">
+            <label for="name">Nom : </label>
         <input id="name" type="text" formControlName="name">
     </div>
-    <div>
+    <div class="container-input">
         <label for="desc">Description : </label>
         <input id="desc" type="text" formControlName="description">
     </div>
-    <div>
+    <div class="container-input">
         <label  for="date-start">Date de début : </label>
         <input id="date-start" type="datetime-local" formControlName="startDate">
     </div>
-    <div>
+    <div class="container-input">
         <label for="date-end">Date de fin : </label>
         <input id="date-end" type="datetime-local" formControlName="endDate">
     </div>
-    <div>
+    <div class="container-input">
         <label for="nb-guest">Nombre de participant maximum : </label>
         <input id="nb-guest" type="number" formControlName="maxGuest">
     </div>
-    <div class="test">
-        <input id="submit" type="submit">
+    <div class="btn-pos">
+        <input id="submit" type="submit" class="btn">
     </div>
 </form>
 </div>

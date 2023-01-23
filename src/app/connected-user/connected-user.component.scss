@@ -1,14 +1,10 @@
 #spy{
-    position:absolute;
-    width : 100vw ;
-    height : 40vh;
-    display : flex;
-    justify-content : start; 
-    align-items : flex-start;
+    position: fixed;
+    bottom: 1%;
     
 }
 a{
-    width: 10vw;
+    width: 100%;
 }
 .detective{
     font-size: x-large;
@@ -16,15 +12,24 @@ a{
 .comp{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     background-color: #ffffff;
     border-radius: 2em;
     width: 12vw;
     padding-top: 1em;
     padding-bottom: 1em;
-
 }
 p{
     margin: 0;
 }
+.pos-btn{
+    width: 100%;
+    text-align: center;
+}
+.disco{
+    position: fixed;
+    bottom: 1px;
+    height: 10%;
+    width: 10%;
+}
+

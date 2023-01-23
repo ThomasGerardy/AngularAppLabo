@@ -5,8 +5,8 @@
                 <div class="img">
                     <div>{{item.name}}</div>
                     <div>{{item.description}}</div>
-                    <div>{{item.startDate}}</div>
-                    <div>{{item.endDate}}</div>
+                    <div>{{item.startDate | date : 'dd/MM/yy hh:mm'}}</div>
+                    <div>{{item.endDate | date : 'dd/MM/yy hh:mm'}}</div>
                     <div>{{item.maxGuest}}</div>
                     <div>une image :)</div>
                     <div><button class="btn-table" (click)="update(item.id)">📄</button></div>
@@ -15,6 +15,6 @@
                 </div>
             </div>
         </div>
+        <h3 *ngIf="faute">Flemme, fallait pas faire de fautes man ! </h3>
     </div>
-    <h3 *ngIf="faute">Flemme, fallait pas faire de fautes man ! </h3>
 

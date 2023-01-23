@@ -1,11 +1,12 @@
-<div class="form-contain"><form [formGroup]="formGuest" (ngSubmit)="join()" *ngIf="!displaySucces">
-    <label for="guest">Reserver pour : </label>
-    <span *ngIf="formGuest.get('nbGuest')?.errors?.['required'] && formGuest.get('nbguest')?.touched">Ce champ est requis</span>
-    <div class="inp">
-        <input id="guest" type="number" formControlName="nbGuest">
-        <input type="submit" value="Valider" class="btn btn-primary btn-outline-lg">
-    </div>
-</form>
+<div class="form-contain">
+    <form [formGroup]="formGuest" (ngSubmit)="join()" *ngIf="!displaySucces">
+        <label for="guest">Reserver pour : </label>
+        <span *ngIf="formGuest.get('nbGuest')?.errors?.['required'] && formGuest.get('nbguest')?.touched">Ce champ est requis</span>
+        <div class="inp">
+            <input id="guest" type="number" formControlName="nbGuest">
+            <input type="submit" value="Valider" class="btn btn-primary btn-outline-lg">
+        </div>
+    </form>
 </div>
 <div *ngIf="displaySucces">
     <p>Vous êtes bien inscrit !</p>

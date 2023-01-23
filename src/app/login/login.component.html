@@ -1,14 +1,20 @@
-<h2>Connectez vous :</h2>
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-    <div>
-        <label for="identifier">Identifiant : </label>
-        <input id="identifier" type="text" placeholder="email/pseudo" formControlName="identifier">
-    </div>
-    <div>
-        <label for="password">Mot de passe : </label>
-        <input id="password" type="password" formControlName="password">
-    </div>
-    <input type="submit" class="btn">
-    <p *ngIf="notValid">L'identifiant et/ou le mot de passe ne sont pas valides.</p>
-</form>
-<p><a routerLink="/register">Pas encore de compte?</a></p>
+
+<div class="container-form">
+
+    <h2>Connectez vous :</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="container-input">
+            <label for="identifier">Identifiant : </label>
+            <input id="identifier" type="text" placeholder="email/pseudo" formControlName="identifier">
+        </div>
+        <div class="container-input">
+            <label for="password">Mot de passe : </label>
+            <input id="password" type="password" formControlName="password">
+        </div>
+        <div class="btn-pos">
+            <input type="submit" class="btn">
+        </div>
+        <p *ngIf="notValid">L'identifiant et/ou le mot de passe ne sont pas valides.</p>
+    </form>
+    <p><a routerLink="/register">Pas encore de compte?</a></p>
+</div>

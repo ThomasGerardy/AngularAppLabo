@@ -4,6 +4,7 @@ import { IUser } from '../models/IUser';
 import { Router } from '@angular/router';
 import { EventService } from '../services/event.service';
 import { IEvent } from '../models/IEvent';
+import { UrlService } from '../services/url.service';
 
 @Component({
   selector: 'app-my-events',
@@ -15,7 +16,7 @@ export class MyEventsComponent implements OnInit{
   myevents : IEvent[] | undefined
   faute : boolean = false
 
-  constructor(private _as : AuthService, private _es : EventService, private _route : Router) {}
+  constructor(private _as : AuthService, private _es : EventService, private _route : Router,private _us : UrlService) {}
 
   // TODO : gérer le petit bug -> quand on est sur my-events et qu'on se déco, on ne peut pas retourner sur l'accueil
   ngOnInit(): void { 
@@ -33,6 +34,11 @@ export class MyEventsComponent implements OnInit{
         this.getMyActivities()
       },
       error : (err) => {console.log(err);}
+    })
+    this._us.foundI().subscribe({
+      next : res => {
+        this._us.changeSelected(res)
+      }
     })
   }
 

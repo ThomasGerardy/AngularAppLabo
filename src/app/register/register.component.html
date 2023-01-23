@@ -1,25 +1,28 @@
-<h2>Inscrivez-vous :</h2>
-<form [formGroup]="registerForm" (ngSubmit)="register()"> 
-    <div>
-        <label for="pseudo-register">Pseudo : </label>
-        <input id="pseudo-register" type="text" placeholder="xxXDrakAssassinXxx" formControlName="pseudo">
-        <span *ngIf="registerForm.get('pseudo')?.touched && registerForm.get('pseudo')?.errors?.['required']">Le pseudo est requis</span>
-        <span *ngIf="registerForm.get('pseudo')?.touched && registerForm.get('pseudo')?.errors?.['minlength']">Le pseudo doit contenir au moins 2 caractères</span>
-        <span *ngIf="registerForm.get('pseudo')?.touched && registerForm.get('pseudo')?.errors?.['maxlength']">Le pseudo ne peut conternir que 50 caractères maximum</span>
-    </div>
-    <div>
+<div class="container-form">
+    <h2>Inscrivez-vous :</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="register()"> 
+        <div class="container-input">
+            <label for="pseudo-register">Pseudo : </label>
+            <input id="pseudo-register" type="text" placeholder="xxXDrakAssassinXxx" formControlName="pseudo">
+            <span *ngIf="registerForm.get('pseudo')?.touched && registerForm.get('pseudo')?.errors?.['required']">Le pseudo est requis</span>
+            <span *ngIf="registerForm.get('pseudo')?.touched && registerForm.get('pseudo')?.errors?.['minlength']">Le pseudo doit contenir au moins 2 caractères</span>
+            <span *ngIf="registerForm.get('pseudo')?.touched && registerForm.get('pseudo')?.errors?.['maxlength']">Le pseudo ne peut conternir que 50 caractères maximum</span>
+        </div>
+        <div class="container-input">
         <label for="email-register">Adresse email : </label>
         <input id="email-register" type="text" placeholder="hello@toutlemonde.com" formControlName="email">
         <span *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']">L'email est requis</span>
         <span *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']">L'email n'est pas valide</span>
     </div>
-    <div>
+    <div class="container-input">
         <label for="password-register">Mot de passe : </label>
         <input id="password-register" type="password" formControlName="password">
         <span *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']">Le mot de passe est requis</span>
         <span *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['pattern']">Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un cractère spécial</span>
     </div>
-    <div> 
-        <input type="submit" value="S'inscrire">
+    <div class="btn-pos"> 
+        <input class="btn" type="submit" value="S'inscrire">
     </div>
 </form>
+<p><a routerLink="/login">Déjà inscrit?</a></p>
+</div>

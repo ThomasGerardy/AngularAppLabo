@@ -1,14 +1,14 @@
 <div id="spy">
-    <div class="user comp" *ngIf="connectedUser">
+    <div class="comp" *ngIf="connectedUser">
         <p>{{connectedUser.pseudo}}</p>
         <p class="detective">🕵️</p>
-        <button><a routerLink="/create-event">Créer un évènement</a></button>
-        <button (click)="logOut()"><a>Se déconnetcer</a></button>
+        <div class="pos-btn">
+            <a routerLink="/create-event"><button class="btn">Créer un évènement</button></a>
+            <a><button (click)="logOut()" class="btn">Se déconnetcer</button></a>
+        </div>
     </div>
 </div>
-<div class="comp">
-    <div *ngIf="!connectedUser">
-        <a routerLink="/login"><button>Se connecter</button></a>
-        <a routerLink="/register"><button>S'inscrire</button></a>
-    </div>
+<div class="disco" *ngIf="!connectedUser">
+        <a routerLink="/login"><button class="btn">Se connecter</button></a>
+        <a routerLink="/register"><button class="btn">S'inscrire</button></a>
 </div>

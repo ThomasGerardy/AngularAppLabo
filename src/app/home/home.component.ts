@@ -68,7 +68,7 @@ export class HomeComponent {
           })
           this.cbon = true
           
-          }, 1000);    
+          }, 2000);    
           
         },
         error : (err) => {

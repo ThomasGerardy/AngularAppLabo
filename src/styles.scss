@@ -14,8 +14,8 @@ button{
     color : #ffffff;
 }
 a{
-    background-color: #364efe;
-    color : #ffffff;
+    // background-color: #364efe;
+    color : #121212;
     text-decoration: none;
     border-radius: 2em;
 
@@ -28,4 +28,42 @@ input{
 .btn{
     background-color: #364efe;
     color: #ffffff;
+    padding: 8px;
+    border-style: none;
+    margin-top: 2px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color:  #ffffff;
+    color:  #364efe;
+    outline: 2px solid  #364efe;
+}
+form{
+    background-color: #ffffff;
+    border-radius: 2em;
+    padding: 2%;
+}
+
+.container-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 250px;
+}
+
+label{
+    margin-bottom: 8px;
+}
+
+.btn-pos{
+    display: flex;
+    justify-content: center;
 }
